@@ -1,0 +1,30 @@
+﻿<Row class="bottom-bar">
+    <NavMenu MenuStyle="navbar bottom-nav-menu"></NavMenu>
+</Row>
+
+<style>
+    /*底部栏*/
+    .bottom-bar {
+        width: 100%;
+        position: fixed; /*固定作用*/
+        bottom: 0px;
+        z-index: 9999; /* 让导航栏浮在网页的高层位置 */
+
+        min-height: 64px;
+    }
+
+    /*底部导航菜单*/
+    .bottom-nav-menu {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    /*当用户使用手机或竖屏平板时，才显示底部导航栏*/
+    @@media (min-width: 768px) {
+        .bottom-bar {
+            display: none;
+        }
+    }
+</style>

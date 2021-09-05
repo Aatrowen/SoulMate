@@ -1,0 +1,68 @@
+﻿@using SoulMate.Client.Components.Shared
+
+<div Class="top-line">
+    <Row Class="top-bar" Justify="center" Align="@(new string("middle"))">
+        <AntDesign.Col Xs="12" Md="6" Class="top-bar-common">
+            <LogoAndText></LogoAndText>
+        </AntDesign.Col>
+
+        <AntDesign.Col Md="12" Class="top-bar-menu">
+            <NavMenu MenuStyle="navbar"></NavMenu>
+        </AntDesign.Col>
+
+        <AntDesign.Col Xs="12" Md="6" Class="top-bar-common">
+            <Text Class="navbar-text">用户头像</Text>
+        </AntDesign.Col>
+    </Row>
+
+    @* 这一行用来扩充背景颜色 *@
+    <Row Style="min-height: 200px"></Row>
+</div>
+
+<style>
+    /*最外层div 背景颜色*/
+    .top-line {
+        background: #12BDCF;
+    }
+
+    /*导航栏样式*/
+    .top-bar {
+        min-height: 64px;
+        text-align: center;
+    }
+
+    /*导航栏的字体样式*/
+    .navbar-text {
+        color: aliceblue;
+        font-size: 1rem;
+    }
+
+    /*整个导航栏的通用样式*/
+    .top-bar-common {
+        min-height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*导航菜单的样式*/
+    .navbar {
+        background-color: #12bdcf;
+        border-bottom: 1px solid #12bdcf;
+    }
+
+    /*导航菜单的父节点（使得导航菜单识别设备为手机时，不显示）*/
+    .top-bar-menu {
+        display: none;
+    }
+
+    /*当用户不使用手机或竖屏平板时，显示顶部导航栏*/
+    @@media (min-width: 768px) {
+        .top-bar-menu {
+            min-height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content:space-around;
+        }
+    }
+</style>

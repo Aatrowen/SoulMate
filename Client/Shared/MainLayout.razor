@@ -1,0 +1,41 @@
+﻿@inherits LayoutComponentBase
+
+@if (!_userState.IsLogin)
+{
+    <div class="bg-image"></div>
+}
+
+<Layout>
+    @if (_userState.IsLogin)
+    {
+        <TopMenu></TopMenu>
+    }
+    <Content>
+        <div class="layout-content">
+            @Body
+        </div>
+    </Content>
+</Layout>
+
+@* 底部导航栏（当用户使用的设备为手机时出现） *@
+<BottomMenu></BottomMenu>
+
+<style>
+    .bg-image {
+        background: url("/images/background.png") no-repeat;
+        /*禁用滚动条 超出的部分全部隐藏*/
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-size: cover;
+        background-attachment: fixed;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .layout-content {
+        background: #fff;
+        padding: 24px;
+        min-height: 200px;
+    }
+</style>

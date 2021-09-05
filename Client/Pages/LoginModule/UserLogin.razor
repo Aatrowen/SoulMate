@@ -1,0 +1,34 @@
+﻿@page "/login"
+@using Microsoft.AspNetCore.Components
+
+<Row Justify="center" Style="margin: 30px;">
+    <AntDesign.Col Xl="10" Style="text-align: center">
+        <Text Style="font-size: 40px; color: indigo;">用户登录</Text>
+    </AntDesign.Col>
+</Row>
+<Row Justify="center">
+    <AntDesign.Col Xs="18" Sm="15" Md="12" Lg="9" Xl="6">
+        <Form Model="@LoginDto" Loading="_loading">
+            <FormItem Label="Username">
+                <Input @bind-Value="@LoginDto.UserName" />
+            </FormItem>
+            <FormItem Label="Password">
+                <InputPassword @bind-Value="@LoginDto.Password" />
+            </FormItem>
+            <FormItem>
+                <Button Type="@ButtonType.Primary" HtmlType="submit" OnClick="LoginSubmit"
+                        Class="login-btn">
+                    登录
+                </Button>
+            </FormItem>
+        </Form>
+    </AntDesign.Col>
+</Row>
+
+<style>
+    .login-btn {
+        width: 150px;
+        display: block;
+        margin: 0 auto;
+    }
+</style>

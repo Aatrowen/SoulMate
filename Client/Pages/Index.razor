@@ -1,0 +1,17 @@
+﻿@page "/"
+
+@code
+{
+    protected override Task OnInitializedAsync()
+    {
+        if (_userState.IsLogin)
+        {
+            _navigationManager.NavigateTo("main-view");
+        }
+        else
+        {
+            _navigationManager.NavigateTo("login");
+        }
+        return base.OnInitializedAsync();
+    }
+}
