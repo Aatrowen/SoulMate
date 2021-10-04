@@ -1,6 +1,10 @@
 ﻿@page "/todo"
-<h3>ToDoView</h3>
 
-@code {
-    
-}
+<AntList Bordered DataSource="@ToDoItemDtos">
+    <Header>我的一天</Header>
+    <ChildContent Context="item">
+        <ListItem>
+            <ToDoItem ToDoItemDto=@item></ToDoItem>
+        </ListItem>
+    </ChildContent>
+</AntList>

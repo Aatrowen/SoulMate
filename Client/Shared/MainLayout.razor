@@ -10,11 +10,18 @@
     {
         <TopMenu></TopMenu>
     }
-    <Content>
-        <div class="layout-content">
-            @Body
-        </div>
-    </Content>
+    <Row Style="width: 100%">
+        @if (_navigationManager.Uri.EndsWith("todo"))
+        {
+            <SiderBar></SiderBar>
+        }
+
+        <Content>
+            <div class="layout-content">
+                @Body
+            </div>
+        </Content>
+    </Row>
 </Layout>
 
 @* 底部导航栏（当用户使用的设备为手机时出现） *@
@@ -35,7 +42,6 @@
 
     .layout-content {
         background: #fff;
-        padding: 24px;
         min-height: 200px;
     }
 </style>

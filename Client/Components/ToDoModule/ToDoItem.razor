@@ -1,0 +1,35 @@
+﻿@* ToDo的单个显示组件 *@
+<Row Class="todo-item-row">
+    <div class="is-finished">
+        @if (ToDoItemDto.IsFinished)
+        {
+            <Icon Type="check-square" Theme="outline"/>
+        }
+        else
+        {
+            <Icon Type="border" Theme="outline"/>
+        }
+    </div>
+    <div class="description">
+        @ToDoItemDto.Title
+    </div>
+</Row>
+
+<style>
+    .todo-item-row {
+        width: 75%;
+        height: 44px;
+        
+        line-height: 40px;
+        
+        font-size: 18px;
+    }
+    
+    .is-finished {
+        margin-right: 9px;
+    }
+    
+    .description {
+        margin-left: 9px;
+    }
+</style>
