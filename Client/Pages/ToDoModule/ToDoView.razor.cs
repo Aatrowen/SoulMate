@@ -16,7 +16,7 @@ namespace SoulMate.Client.Pages.ToDoModule
             new ToDoItemDto() {Title = "ddd", Description = "dddddddddddddddddd"},
             new ToDoItemDto() {Title = "eeeee", Description = "eeeeeeeeeeeeeeeeeeee"}
         };
-
+        
         protected override void OnInitialized()
         {
             DateToday = DateTime.Now;
