@@ -1,10 +1,19 @@
 ﻿@page "/todo"
 
-<AntList Bordered DataSource="@ToDoItemDtos">
-    <Header>我的一天</Header>
-    <ChildContent Context="item">
-        <ListItem>
-            <ToDoItem ToDoItemDto=@item></ToDoItem>
-        </ListItem>
-    </ChildContent>
-</AntList>
+<Row>
+    <Col Xs="0" Md="1"></Col>
+    <Col Xs="24" Md="22">
+        <div Class="todo-content">
+            <ToDoTopBar DateToday="DateToday"></ToDoTopBar>
+            <ToDoList></ToDoList>
+            <ToDoBackground></ToDoBackground>
+        </div>
+    </Col>
+    <Col Xs="0" Md="1"></Col>
+</Row>
+
+<style>
+    .todo-content {
+        margin: 0 24px;
+    }
+</style>

@@ -2,7 +2,7 @@
 @using SoulMate.Client.Components.MainView
 
 @* 这一行用来扩充背景颜色 *@
-<Row Style="min-height: 200px; background-color: #12bdcf"></Row>
+<Row Class="main-view-background"></Row>
 
 <ScoreBox></ScoreBox>
 
@@ -10,5 +10,18 @@
 <ToDoRow></ToDoRow>
 <ToDoRow></ToDoRow>
 <ToDoRow></ToDoRow>
+
+<style>
+    /* 填充背景颜色，并覆盖掉导航栏的阴影 */
+    .main-view-background {
+        min-height: 200px; 
+        background-color: #12bdcf;
+        
+        position: relative;
+        top: -0.5px;
+        
+        z-index: 10000;
+    }
+</style>
 
 
