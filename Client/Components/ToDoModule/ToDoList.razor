@@ -1,5 +1,5 @@
-<h3>ToDoList</h3>
 
-@code {
-    
+@foreach (var item in ToDoItemDtos)
+{
+    <ToDoItem ToDoItemDto="item"></ToDoItem>
 }

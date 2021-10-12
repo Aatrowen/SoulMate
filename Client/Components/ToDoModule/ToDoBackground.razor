@@ -1,11 +1,27 @@
-<Row class="todo-backgroundlines"></Row>
+@* 在todo列表 和 背景线中起缓冲作用*@
+<div style="overflow: hidden">
+    <Row Class="todo-background-buffer"></Row>
+    
+    <Row Class="todo-background-lines"></Row>
+</div>
 
 <style>
-    .todo-backgroundlines {
+    .todo-background-buffer {
+        min-height: 53px;
+    }
+
+    .todo-background-lines {
         flex: 1;
-        background: linear-gradient(180deg, white, white 52px, #e5e5e5 52px, #e5e5e5 52px);
+        background: linear-gradient(180deg, #f8f8f8, #f8f8f8 52px, #d3d3d3 52px, #d3d3d3 52px);
         background-size: 100% 53px;
-        box-shadow: inset 0 1px 0 0 #e5e5e5;
-        min-height: 848px;
+        box-shadow: inset 0 1px 0 0 #d3d3d3;
+        min-height: calc(100vh - 48px - 48px - 45px - 60px - 106px - @ToDoItemDtos.Count * 53px);
+    }
+    
+    /*当用户使用的不是手机或竖屏平板时*/
+    @@media (min-width: 768px) {
+        .todo-background-lines {
+            min-height: calc(100vh - 48px - 45px - 60px - 106px - @ToDoItemDtos.Count * 53px);
+        }
     }
 </style>

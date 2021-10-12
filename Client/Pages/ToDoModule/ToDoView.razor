@@ -1,18 +1,26 @@
 ﻿@page "/todo"
+@using SoulMate.Shared.ToDoModule
 
-<Row>
-    <Col Xs="0" Md="1"></Col>
-    <Col Xs="24" Md="22">
-        <div Class="todo-content">
-            <ToDoTopBar DateToday="DateToday"></ToDoTopBar>
-            <ToDoList ToDoItemDtos="ToDoItemDtos"></ToDoList>
-            <ToDoBackground></ToDoBackground>
-        </div>
-    </Col>
-    <Col Xs="0" Md="1"></Col>
-</Row>
+<CascadingValue Value="ToDoItemDtos">
+    <Row Class="todo-row">
+        <Col Xs="0" Md="1"></Col>
+        <Col Xs="24" Md="22">
+            <div Class="todo-content">
+                <ToDoTopBar DateToday="DateToday"></ToDoTopBar>
+                <ToDoList></ToDoList>
+                <ToDoBackground></ToDoBackground>
+                <ToDoAddBar></ToDoAddBar>
+            </div>
+        </Col>
+        <Col Xs="0" Md="1"></Col>
+    </Row>
+</CascadingValue>
 
 <style>
+    .todo-row { 
+        background-color: #f8f8f8;
+    }
+
     .todo-content {
         margin: 0 24px;
     }

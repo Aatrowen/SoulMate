@@ -7,7 +7,6 @@ namespace SoulMate.Client.Components.ToDoModule
 {
     public partial class ToDoList
     {
-        [Parameter] public IList<ToDoItemDto> ToDoItemDtos { get; set; } = new Collection<ToDoItemDto>();
-
+        [CascadingParameter] public IList<ToDoItemDto> ToDoItemDtos { get; set; } = new Collection<ToDoItemDto>();
     }
 }

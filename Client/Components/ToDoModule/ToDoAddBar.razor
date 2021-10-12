@@ -1,0 +1,16 @@
+
+<Input Placeholder="添加任务"
+       Class="todo-add-bar"
+       Size="@InputSize.Large"
+       @bind-Value="@AddTodoItemDto.Title">
+    <Prefix>
+        <Icon Type="plus" Theme="outline"/>
+    </Prefix>
+</Input>
+
+<style>
+    .todo-add-bar {
+        min-height: 45px;
+        border-radius: 10px; 
+    }
+</style>
