@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using SoulMate.Client.Services.IService;
@@ -12,6 +13,7 @@ namespace SoulMate.Client.Components.ToDoModule
 
         public async Task OnInputEnter()
         {
+            AddTodoItemDto.TodoDate = DateTime.Now;
             await ToDoService.AddTodoITem(AddTodoItemDto);
             AddTodoItemDto = new ToDoItemDto();
             await InvokeAsync(StateHasChanged);

@@ -21,10 +21,12 @@ namespace SoulMate.Server.Services.Repositories
         
         public async Task<List<TodoItem>> GetAllTodosToday(string userName, DateTime todayDateTime)
         {
-            var user = await _userRepository.GetByUserName(userName);
-            var userTodos = user.TodoItems.Where(x => x.TodoDate.Date == todayDateTime.Date).ToList();
+            // var user = await _userRepository.GetByUserName(userName);
 
-            List<TodoItem> sortedTodoItems = new List<TodoItem>();
+            var userTodos = _context.TodoItems.Where(x => x.User.UserName == userName
+                                                    && x.TodoDate.Date == todayDateTime.Date).ToList();
+            
+            var sortedTodoItems = new List<TodoItem>();
             sortedTodoItems.AddRange(userTodos.Where(x => 
                 x.IsFinished == false && x.IsImportant == true));
             sortedTodoItems.AddRange(userTodos.Where(x => 

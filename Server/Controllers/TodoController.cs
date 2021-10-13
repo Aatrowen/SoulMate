@@ -22,14 +22,14 @@ namespace SoulMate.Server.Controllers
             _mapper = mapper;
         }
 
-        [HttpPost("/todos")]
+        [HttpPost("todos")]
         public async Task<ActionResult<List<ToDoItemDto>>> GetAllTodosToday(ToDoItemDto toDoItemDto)
         {
             var res = await _todoRepository.GetAllTodosToday(toDoItemDto.UserName, toDoItemDto.TodoDate);
             return Ok(_mapper.Map<List<ToDoItemDto>>(res));
         }
 
-        [HttpPost("/addtodo")]
+        [HttpPost("addtodo")]
         public async Task<ActionResult> AddTodoItem(ToDoItemDto addToDoItemDto)
         {
             var todoItemMap = _mapper.Map<TodoItem>(addToDoItemDto);
