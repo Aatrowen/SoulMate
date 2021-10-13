@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SoulMate.Server.Data;
 
 namespace SoulMate.Server.Migrations
 {
     [DbContext(typeof(SoulDbContext))]
-    partial class SoulDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211012144208_AddTodoTable")]
+    partial class AddTodoTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,15 +47,15 @@ namespace SoulMate.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "37df3fe0-8a0f-4b7f-b1ce-282d404ae693",
-                            ConcurrencyStamp = "325635b5-74c2-40b3-8ccf-262c2f5d1ca3",
+                            Id = "b3ac3891-55db-43b7-bc47-28d2a026c347",
+                            ConcurrencyStamp = "6a2d8c17-260b-4c13-a5ce-ed298d8960e3",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "c4333a27-54e7-4467-a169-e8300534790f",
-                            ConcurrencyStamp = "536f1c25-9e5e-41f0-868a-1f22044ea9d8",
+                            Id = "5c78ee7a-9ad0-415a-939e-98c9bc793dc9",
+                            ConcurrencyStamp = "e38f14c8-c4d1-4212-b11c-c5e7f7b9ad53",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -269,9 +271,6 @@ namespace SoulMate.Server.Migrations
 
                     b.Property<string>("Title")
                         .HasColumnType("longtext");
-
-                    b.Property<DateTime>("TodoDate")
-                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("UserId")
                         .HasColumnType("varchar(255)");

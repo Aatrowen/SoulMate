@@ -21,6 +21,7 @@ namespace SoulMate.Client
 
             builder.Services.AddSingleton<UserState>();
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+            builder.Services.AddScoped<IToDoService, ToDoService>();
 
             await builder.Build().RunAsync();
         }

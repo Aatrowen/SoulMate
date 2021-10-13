@@ -2,6 +2,7 @@
 <Input Placeholder="添加任务"
        Class="todo-add-bar"
        Size="@InputSize.Large"
+       OnPressEnter="OnInputEnter"
        @bind-Value="@AddTodoItemDto.Title">
     <Prefix>
         <Icon Type="plus" Theme="outline"/>

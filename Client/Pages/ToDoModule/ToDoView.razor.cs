@@ -1,25 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components;
+using SoulMate.Client.Services.IService;
 using SoulMate.Shared.ToDoModule;
 
 namespace SoulMate.Client.Pages.ToDoModule
 {
     public partial class ToDoView
     {
+        [Inject] public IToDoService ToDoService { get; set; }
         public DateTime DateToday { get; set; } = new DateTime();
-        
-        public List<ToDoItemDto> ToDoItemDtos { get; set; } = new List<ToDoItemDto>()
+
+        public List<ToDoItemDto> ToDoItemDtos { get; set; } = new List<ToDoItemDto>();
+
+        protected override async Task OnInitializedAsync()
         {
-            new ToDoItemDto() {Title = "aaaaa", Description = "aaaaaaaaaaaaaaaaaaaaaaaa"},
-            new ToDoItemDto() {Title = "bbb", Description = "bbbbbbbbbbbbbbbbbbbbbbbbbbb"},
-            new ToDoItemDto() {Title = "ccc", Description = "cccccccccccccccccccccc"},
-            new ToDoItemDto() {Title = "ddd", Description = "dddddddddddddddddd"},
-            new ToDoItemDto() {Title = "eeeee", Description = "eeeeeeeeeeeeeeeeeeee"}
-        };
-        
-        protected override void OnInitialized()
-        {
-            DateToday = DateTime.Now;
+            ToDoItemDtos = await ToDoService.GetAllTodosToday();
         }
     }
 }

@@ -8,6 +8,8 @@ namespace SoulMate.Server.Data
     {
         public SoulDbContext(DbContextOptions<SoulDbContext> options) : base(options) { }
 
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<TodoItem> TodoItems { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -67,6 +67,7 @@ namespace SoulMate.Server
 
             // 注册自定义的服务
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ITodoRepository, TodoRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

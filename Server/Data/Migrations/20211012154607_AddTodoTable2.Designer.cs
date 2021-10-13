@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SoulMate.Server.Data;
 
 namespace SoulMate.Server.Migrations
 {
     [DbContext(typeof(SoulDbContext))]
-    partial class SoulDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211012154607_AddTodoTable2")]
+    partial class AddTodoTable2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,6 +1,6 @@
 ﻿@* ToDo的单个显示组件 *@
-<Space Class="todo-item-row">
-    <SpaceItem Class="is-finished">
+<div class="todo-item-row">
+    <div Class="is-finished" @onclick="TodoFinishClicked">
         @if (ToDoItemDto.IsFinished)
         {
             <Icon Type="check-square" Theme="outline"/>
@@ -9,11 +9,11 @@
         {
             <Icon Type="border" Theme="outline"/>
         }
-    </SpaceItem>
-    <SpaceItem Class="description">
+    </div>
+    <div Class="description" @onclick="TodoItemClicked">
         @ToDoItemDto.Title
-    </SpaceItem>
-    <SpaceItem Class="is-important">
+    </div>
+    <div Class="is-important" @onclick="TodoImportantClicked">
         @if (ToDoItemDto.IsImportant)
         {
             <Icon Type="star" Theme="fill"/>
@@ -22,8 +22,8 @@
         {
             <Icon Type="star" Theme="outline"/>
         }
-    </SpaceItem>
-</Space>
+    </div>
+</div>
 
 <style>
     .todo-item-row {
@@ -33,6 +33,9 @@
         line-height: 40px;
         
         display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
         
         border-radius: 10px; 
         border-bottom: 1px solid #d3d3d3;
@@ -45,6 +48,13 @@
     
     .is-finished {
         margin-left: 12px;
+    }
+    
+    .description {
+        margin: 0 12px;
+        
+        width: 100%;
+        text-align: start;
     }
     
     .is-important {

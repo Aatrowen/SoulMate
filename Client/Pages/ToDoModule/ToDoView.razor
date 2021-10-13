@@ -1,12 +1,11 @@
 ﻿@page "/todo"
-@using SoulMate.Shared.ToDoModule
 
 <CascadingValue Value="ToDoItemDtos">
     <Row Class="todo-row">
         <Col Xs="0" Md="1"></Col>
         <Col Xs="24" Md="22">
             <div Class="todo-content">
-                <ToDoTopBar DateToday="DateToday"></ToDoTopBar>
+                <ToDoTopBar></ToDoTopBar>
                 <ToDoList></ToDoList>
                 <ToDoBackground></ToDoBackground>
                 <ToDoAddBar></ToDoAddBar>
