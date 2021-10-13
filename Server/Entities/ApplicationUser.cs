@@ -14,7 +14,7 @@ namespace SoulMate.Server.Entities
 
         public string Address { get; set; }
 
-        public List<TodoItem> TodoItems { get; set; }
+        public List<TodoItem> TodoItems { get; set; } = new List<TodoItem>();
 
         public virtual ICollection<IdentityUserRole<string>> UserRoles { get; set; }
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
